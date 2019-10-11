@@ -1,0 +1,36 @@
+{
+  "topics": {
+    "topic": {
+      "properties": {
+        "0": "team_id",
+        "1": "lane_type",
+        "2": "group_id",
+        "3": "component_type",
+        "4": "component_id",
+        "5": ""
+      },
+      "separator": {
+
+      },
+      "delimiter": {
+
+      }
+    },
+    "topic": {
+      "properties": {
+        "0": "team_id",
+        "1": "lane_type",
+        "2": "group_id",
+        "3": "subgroup_id",
+        "4": "component_type",
+        "5": "component_id"
+      },
+      "separator": {
+
+      },
+      "delimiter": {
+
+      }
+    }
+  }
+}
