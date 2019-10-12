@@ -1,12 +1,13 @@
 import time, threading
 import random
 from enum import Enum
-
+from zenlog import log
 
 class TrafficLights(Enum):
     RED = 0
     GREEN = 2
     ORANGE = 1
+
 
 
 class TrafficTopicFeeder:
@@ -17,13 +18,10 @@ class TrafficTopicFeeder:
         self.min_interval = 10
         self.max_interval = 25
         self.enum_index = TrafficLights.RED
-        print("Enum index = " + str(self.enum_index))
 
-    # Set min Interval in ms.
     def set_min_interval(self, interval):
         self.min_interval = interval
 
-    # Set max Interval in ms.
     def set_max_interval(self, interval):
         self.max_interval = interval
 
@@ -39,6 +37,7 @@ class TrafficTopicFeeder:
 
         return random.randint(self.min_interval, self.max_interval)
 
+    # Sets the next value according to traffic light order
     def set_next_value(self):
         if self.enum_index == TrafficLights.RED:
             self.enum_index = TrafficLights.GREEN
@@ -49,12 +48,14 @@ class TrafficTopicFeeder:
         else:
             self.enum_index = TrafficLights.RED
 
+    # Publish on topic and enqueues next execution using Threading.Timer
     def feed_topic(self):
         for topic in self.topics:
-            print("Writing to topic: " + str(topic) + " with value: " + str(self.enum_index.value))
+            log.info("Writing to topic: " + str(topic) + " with value: " + str(self.enum_index.value))
             self.client.publish(topic, self.enum_index.value)
 
         next_exec = self.determine_interval()
         threading.Timer(next_exec, self.feed_topic).start()
         self.set_next_value()
-        print("Setting traffic light to " + str(self.enum_index) + " in " + str(next_exec) + " seconds")
+
+        log.info("Setting traffic light to " + str(self.enum_index) + " in " + str(next_exec) + " seconds")

@@ -1,15 +1,16 @@
 import paho.mqtt.client as mqtt
 import traffic_topic_feeder
 from enum import Enum
+from zenlog import log
 
 def on_connect(client, userdata, flags, rc):
-    print("Connected with result code:" + str(rc))
+    log.info("Connected with result code:" + str(rc))
     client.subscribe("$SYS")
     client.subscribe("8/motorised/north/0/0/traffic_light/0")
 
 
 def on_message(client, userdata, msg):
-    print(msg.topic + " " + str(msg.payload))
+    log.info(msg.topic + " " + str(msg.payload))
 
 
 listener = mqtt.Client()

@@ -1,5 +1,5 @@
 from models.traffic_message import TrafficMessage
-
+from zenlog import log
 
 class TrafficMessageFactory():
     def __init__(self):
@@ -31,8 +31,7 @@ class TrafficMessageFactory():
         expected_length = len(self.message_order)
 
         if prop_length != expected_length:
-            # TODO: Implement logging library with different levels of logging.
-            print("Number of expected properties for TrafficMessage does not match. Expected: "
+            log.critical("Number of expected properties for TrafficMessage does not match. Expected: "
                   + str(expected_length) + "; Given: " + str(prop_length) + ";")
             return
 
@@ -42,13 +41,12 @@ class TrafficMessageFactory():
                 getattr(traffic_message, attr)
             except AttributeError:
                 class_name = type(traffic_message).__name__
-                # TODO: Implement logging library with different levels of logging.
-                print("Property unknown. Cannot convert to " + str(class_name))
+                log.critical("Property unknown. Cannot convert to " + str(class_name))
                 return
 
             setattr(traffic_message, self.message_order[i], properties[i])
 
-        print("Message OK! Returning now.")
+        log.info("Message OK! Returning now.")
     # Convert the topic from string format to list.
     def __topic_to_list(self, topic: str):
         properties = topic.split("/")
