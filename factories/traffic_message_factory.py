@@ -1,7 +1,8 @@
 from models.traffic_message import TrafficMessage
 from zenlog import log
 
-class TrafficMessageFactory():
+
+class TrafficMessageFactory:
     def __init__(self):
         self.message_order = {
             0: "team_id",
@@ -11,9 +12,11 @@ class TrafficMessageFactory():
             4: "component_id"
         }
 
+        self.type = TrafficMessage
+
     # Make traffic message
     def make_traffic_message(self, topic: str, payload: str):
-        traffic_message = TrafficMessage()
+        traffic_message = self.type()
 
         property_list = self.__topic_to_list(topic)
 
@@ -32,10 +35,10 @@ class TrafficMessageFactory():
 
         if prop_length != expected_length:
             log.critical("Number of expected properties for TrafficMessage does not match. Expected: "
-                  + str(expected_length) + "; Given: " + str(prop_length) + ";")
+                         + str(expected_length) + "; Given: " + str(prop_length) + ";")
             return
 
-        for i in range(len(properties)-1):
+        for i in range(len(properties) - 1):
             try:
                 attr = self.message_order[i]
                 getattr(traffic_message, attr)
@@ -47,6 +50,7 @@ class TrafficMessageFactory():
             setattr(traffic_message, self.message_order[i], properties[i])
 
         log.info("Message OK! Returning now.")
+
     # Convert the topic from string format to list.
     def __topic_to_list(self, topic: str):
         properties = topic.split("/")

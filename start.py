@@ -20,15 +20,17 @@ listener.on_connect = on_connect
 listener.on_message = on_message
 
 feeder = traffic_topic_feeder.TrafficTopicFeeder(publisher)
-feeder.add_topic("/test")
+feeder.add_topic("24/")
 feeder.feed_topic()
 
 listener.connect("91.121.165.36", 1883, 60)
 publisher.connect("91.121.165.36", 1883, 60)
 
-listener.subscribe("24/motorised/north/0/0/traffic_light/0")
+listener.subscribe("/24/#")
 
 publisher.publish("/test", "Test Message")
+
+publisher.publish("/24/motorised/north/2/1/traffic_light/0", "Hello Denjol!")
 
 publisher.loop_forever()
 listener.loop_forever()

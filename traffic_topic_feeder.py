@@ -15,8 +15,8 @@ class TrafficTopicFeeder:
         self.topics = []
         self.values = []
         self.client = client
-        self.min_interval = 10
-        self.max_interval = 25
+        self.min_interval = 3
+        self.max_interval = 6
         self.enum_index = TrafficLights.RED
 
     def set_min_interval(self, interval):

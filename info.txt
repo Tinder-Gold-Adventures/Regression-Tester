@@ -1,0 +1,18 @@
+<team_id>/<lane_type>/<group_id>/<component_type>/<component_id>
+
+<team_id>/<lane_type>/<group_id>/<subgroup_id>/<component_type>/<component_id>
+
+team_id: <1-25>
+lane_type: <foot, cycle, motorised, vessel, track>
+group_id: <0-8>
+component_type: <traffic_light, warning_light, sensor, barrier>
+component_id: <1-N>
+
+<24>/<motorised>/<0>/<traffic_light>
+<24>/<motorised>/<1>/<0>/<traffic_light>
+
+<1-24>/<foot, cycle, motorised, vessel, track>/<traffic_light, warning_light, sensor, barrier>/<0-8>
+int, string, string, int.
+
+<24><motorised><0, 2, 6><traffic_light><0>
+<24><motorised><1, 5><[0, 1], [0, 1]><traffic_light><0>
