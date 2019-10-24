@@ -14,7 +14,7 @@ class AvailableTopicsService:
             data = json.load(file)
             return data
 
-    #TODO: Type hint through entire project.
+
     def get_topics(self) -> dict:
         data: dict = self.__get_json()
         traffic_message_factory = TrafficMessageFactory()
@@ -37,9 +37,9 @@ class AvailableTopicsService:
             key, value = list(intersection.items())[0]
 
             intersect_one: TrafficMessage = self.topics.get(key)
-            intersect_two: TrafficMessage = self.topics.get(value)
+            # intersect_two: TrafficMessage = self.topics.get(value)
 
             intersect_one.intersections.append(value)
-            intersect_two.intersections.append(key)
+            # intersect_two.intersections.append(key)
 
         return self.topics

@@ -4,15 +4,73 @@
     { "topic": "24/motorised/1/0/traffic_light/0"},
     { "topic": "24/motorised/1/1/traffic_light/0"},
     { "topic": "24/motorised/2/traffic_light/0"},
+
+    { "topic": "24/motorised/3/traffic_light/0"},
+    { "topic": "24/motorised/4/traffic_light/0"},
+
     { "topic": "24/motorised/5/0/traffic_light/0"},
     { "topic": "24/motorised/5/1/traffic_light/0"},
-    { "topic": "24/motorised/6/traffic_light/0"}
+    { "topic": "24/motorised/6/traffic_light/0"},
+
+    { "topic": "24/motorised/7/traffic_light/0"},
+    { "topic": "24/motorised/8/traffic_light/0"}
   ],
 
   "intersections": [
+    {"24/motorised/0/traffic_light/0" : "24/motorised/4/traffic_light/0"},
     {"24/motorised/0/traffic_light/0" : "24/motorised/5/0/traffic_light/0"},
     {"24/motorised/0/traffic_light/0" : "24/motorised/5/1/traffic_light/0"},
-    {"24/motorised/2/traffic_light/0" : "24/motorised/6/traffic_light/0"}
+    {"24/motorised/0/traffic_light/0" : "24/motorised/7/traffic_light/0"},
+
+    {"24/motorised/1/0/traffic_light/0": "24/motorised/4/traffic_light/0"},
+    {"24/motorised/1/1/traffic_light/0": "24/motorised/4/traffic_light/0"},
+    {"24/motorised/1/0/traffic_light/0": "24/motorised/6/traffic_light/0"},
+    {"24/motorised/1/1/traffic_light/0": "24/motorised/6/traffic_light/0"},
+    {"24/motorised/1/0/traffic_light/0": "24/motorised/7/traffic_light/0"},
+    {"24/motorised/1/1/traffic_light/0": "24/motorised/7/traffic_light/0"},
+    {"24/motorised/1/0/traffic_light/0": "24/motorised/8/traffic_light/0"},
+    {"24/motorised/1/1/traffic_light/0": "24/motorised/8/traffic_light/0"},
+
+    {"24/motorised/2/traffic_light/0" : "24/motorised/6/traffic_light/0"},
+
+    {"24/motorised/3/traffic_light/0": "24/motorised/5/0/traffic_light/0"},
+    {"24/motorised/3/traffic_light/0": "24/motorised/5/1/traffic_light/0"},
+    {"24/motorised/3/traffic_light/0": "24/motorised/7/traffic_light/0"},
+
+    {"24/motorised/4/traffic_light/0": "24/motorised/0/traffic_light/0"},
+    {"24/motorised/4/traffic_light/0": "24/motorised/1/0/traffic_light/0"},
+    {"24/motorised/4/traffic_light/0": "24/motorised/1/1/traffic_light/0"},
+    {"24/motorised/4/traffic_light/0": "24/motorised/5/0/traffic_light/0"},
+    {"24/motorised/4/traffic_light/0": "24/motorised/5/1/traffic_light/0"},
+    {"24/motorised/4/traffic_light/0": "24/motorised/6/traffic_light/0"},
+    {"24/motorised/4/traffic_light/0": "24/motorised/8/traffic_light/0"},
+
+    {"24/motorised/5/0/traffic_light/0" : "24/motorised/0/traffic_light/0"},
+    {"24/motorised/5/1/traffic_light/0" : "24/motorised/0/traffic_light/0"},
+    {"24/motorised/5/0/traffic_light/0" : "24/motorised/3/traffic_light/0"},
+    {"24/motorised/5/1/traffic_light/0" : "24/motorised/3/traffic_light/0"},
+    {"24/motorised/5/0/traffic_light/0" : "24/motorised/4/traffic_light/0"},
+    {"24/motorised/5/1/traffic_light/0" : "24/motorised/4/traffic_light/0"},
+    {"24/motorised/5/0/traffic_light/0" : "24/motorised/7/traffic_light/0"},
+    {"24/motorised/5/1/traffic_light/0" : "24/motorised/7/traffic_light/0"},
+
+    {"24/motorised/6/traffic_light/0" : "24/motorised/1/0/traffic_light/0"},
+    {"24/motorised/6/traffic_light/0" : "24/motorised/1/1/traffic_light/0"},
+    {"24/motorised/6/traffic_light/0" : "24/motorised/4/traffic_light/0"},
+    {"24/motorised/6/traffic_light/0" : "24/motorised/7/traffic_light/0"},
+    {"24/motorised/6/traffic_light/0" : "24/motorised/2/traffic_light/0"},
+
+    {"24/motorised/7/traffic_light/0" : "24/motorised/0/traffic_light/0"},
+    {"24/motorised/7/traffic_light/0" : "24/motorised/1/0/traffic_light/0"},
+    {"24/motorised/7/traffic_light/0" : "24/motorised/1/1/traffic_light/0"},
+    {"24/motorised/7/traffic_light/0" : "24/motorised/3/traffic_light/0"},
+    {"24/motorised/7/traffic_light/0" : "24/motorised/5/0/traffic_light/0"},
+    {"24/motorised/7/traffic_light/0" : "24/motorised/5/1/traffic_light/0"},
+    {"24/motorised/7/traffic_light/0" : "24/motorised/6/traffic_light/0"},
+
+    {"24/motorised/8/traffic_light/0" : "24/motorised/1/0/traffic_light/0"},
+    {"24/motorised/8/traffic_light/0" : "24/motorised/1/1/traffic_light/0"},
+    {"24/motorised/8/traffic_light/0" : "24/motorised/4/traffic_light/0"}
   ]
 
 }

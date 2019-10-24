@@ -1,13 +1,15 @@
-import time, threading
+import threading
 import random
+import json
+import paho.mqtt.client as mqtt
 from enum import Enum
 from zenlog import log
+
 
 class TrafficLights(Enum):
     RED = 0
     GREEN = 2
     ORANGE = 1
-
 
 
 class TrafficTopicFeeder:
@@ -59,3 +61,30 @@ class TrafficTopicFeeder:
         self.set_next_value()
 
         log.info("Setting traffic light to " + str(self.enum_index) + " in " + str(next_exec) + " seconds")
+
+
+def get_json():
+    with open("ruleset.json") as file:
+        data = json.load(file)
+        return data
+
+
+def on_connect(client, userdata, flags, rc):
+    log.info("Connected to client with status code: " + str(rc))
+
+
+client = mqtt.Client()
+client.connect("62.210.180.72", 1883, 60)
+
+client.on_connect = on_connect
+
+topic_feeder = TrafficTopicFeeder(client)
+
+data: dict = get_json()
+topics = data.get("topics")
+
+for topic in topics:
+    to_feed = topic.get("topic")
+    topic_feeder.add_topic(to_feed)
+
+topic_feeder.feed_topic()

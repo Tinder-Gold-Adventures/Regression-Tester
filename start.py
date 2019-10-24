@@ -3,6 +3,8 @@ import traffic_topic_feeder
 from enum import Enum
 from zenlog import log
 
+# TODO: Type hint through entire project.
+
 def on_connect(client, userdata, flags, rc):
     log.info("Connected with result code:" + str(rc))
     client.subscribe("$SYS")
@@ -23,8 +25,8 @@ feeder = traffic_topic_feeder.TrafficTopicFeeder(publisher)
 feeder.add_topic("24/")
 feeder.feed_topic()
 
-listener.connect("91.121.165.36", 1883, 60)
-publisher.connect("91.121.165.36", 1883, 60)
+listener.connect("62.210.180.72", 1883, 60)
+publisher.connect("62.210.180.72", 1883, 60)
 
 listener.subscribe("/24/#")
 
