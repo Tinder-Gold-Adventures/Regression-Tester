@@ -1,5 +1,4 @@
-from abc import ABC, abstractmethod, abstractproperty
-from zenlog import log
+from abc import ABC, abstractmethod
 
 class MessageFactory(ABC):
     def __init__(self):

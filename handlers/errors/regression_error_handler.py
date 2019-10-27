@@ -2,7 +2,6 @@ from errors.collision_error import CollisionError
 from errors.invalid_value_error import InvalidValueError
 from errors.topic_error import TopicError
 from errors.state_error import StateError
-from zenlog import log
 from abc import abstractmethod
 
 class RegressionErrorHandler:

@@ -3,7 +3,6 @@ from handlers.errors.regression_error_handler import RegressionErrorHandler
 from errors.state_error import StateError
 from errors.topic_error import TopicError
 from errors.collision_error import CollisionError
-from paho.mqtt.client import Client
 from zenlog import log
 
 class LogErrorHandler(RegressionErrorHandler):
