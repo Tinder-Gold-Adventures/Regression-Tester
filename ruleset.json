@@ -1,76 +1,109 @@
 {
-  "topics": [
-    { "topic": "24/motorised/0/traffic_light/0" },
-    { "topic": "24/motorised/1/0/traffic_light/0"},
-    { "topic": "24/motorised/1/1/traffic_light/0"},
-    { "topic": "24/motorised/2/traffic_light/0"},
+  "traffic_lights": [
+    { "topic": "*/motorised/0/traffic_light/0"},
+    { "topic": "*/motorised/1/0/traffic_light/0"},
+    { "topic": "*/motorised/1/1/traffic_light/0"},
+    { "topic": "*/motorised/2/traffic_light/0"},
 
-    { "topic": "24/motorised/3/traffic_light/0"},
-    { "topic": "24/motorised/4/traffic_light/0"},
+    { "topic": "*/motorised/3/traffic_light/0"},
+    { "topic": "*/motorised/4/traffic_light/0"},
 
-    { "topic": "24/motorised/5/0/traffic_light/0"},
-    { "topic": "24/motorised/5/1/traffic_light/0"},
-    { "topic": "24/motorised/6/traffic_light/0"},
+    { "topic": "*/motorised/5/0/traffic_light/0"},
+    { "topic": "*/motorised/5/1/traffic_light/0"},
+    { "topic": "*/motorised/6/traffic_light/0"},
 
-    { "topic": "24/motorised/7/traffic_light/0"},
-    { "topic": "24/motorised/8/traffic_light/0"}
+    { "topic": "*/motorised/7/traffic_light/0"},
+    { "topic": "*/motorised/8/traffic_light/0"}
+
+  ],
+
+  "sensors" : [
+    { "topic" : "*/motorised/0/sensor/0" },
+    { "topic" : "*/motorised/0/sensor/1" },
+    { "topic" : "*/motorised/1/0/sensor/0"},
+    { "topic" : "*/motorised/1/0/sensor/1" },
+    { "topic" : "*/motorised/1/1/sensor/0" },
+    { "topic" : "*/motorised/1/1/sensor/1"},
+    { "topic" : "*/motorised/2/sensor/0"},
+    { "topic" : "*/motorised/2/sensor/1"},
+
+    { "topic" : "*/motorised/3/sensor/0"},
+    { "topic" : "*/motorised/3/sensor/1"},
+
+    { "topic" : "*/motorised/4/sensor/0" },
+    { "topic" : "*/motorised/4/sensor/1" },
+
+    { "topic" : "*/motorised/5/0/sensor/0" },
+    { "topic" : "*/motorised/5/0/sensor/1" },
+    { "topic" : "*/motorised/5/1/sensor/0" },
+    { "topic" : "*/motorised/5/1/sensor/1" },
+
+    { "topic" : "*/motorised/6/sensor/0"},
+    { "topic" : "*/motorised/6/sensor/1"},
+
+    { "topic" : "*/motorised/7/sensor/0" },
+    { "topic" : "*/motorised/7/sensor/1" },
+
+    { "topic" : "*/motorised/8/sensor/0" },
+    { "topic" : "*/motorised/8/sensor/1" }
+
   ],
 
   "intersections": [
-    {"24/motorised/0/traffic_light/0" : "24/motorised/4/traffic_light/0"},
-    {"24/motorised/0/traffic_light/0" : "24/motorised/5/0/traffic_light/0"},
-    {"24/motorised/0/traffic_light/0" : "24/motorised/5/1/traffic_light/0"},
-    {"24/motorised/0/traffic_light/0" : "24/motorised/7/traffic_light/0"},
+    {"*/motorised/0/traffic_light/0" : "*/motorised/4/traffic_light/0"},
+    {"*/motorised/0/traffic_light/0" : "*/motorised/5/0/traffic_light/0"},
+    {"*/motorised/0/traffic_light/0" : "*/motorised/5/1/traffic_light/0"},
+    {"*/motorised/0/traffic_light/0" : "*/motorised/7/traffic_light/0"},
 
-    {"24/motorised/1/0/traffic_light/0": "24/motorised/4/traffic_light/0"},
-    {"24/motorised/1/1/traffic_light/0": "24/motorised/4/traffic_light/0"},
-    {"24/motorised/1/0/traffic_light/0": "24/motorised/6/traffic_light/0"},
-    {"24/motorised/1/1/traffic_light/0": "24/motorised/6/traffic_light/0"},
-    {"24/motorised/1/0/traffic_light/0": "24/motorised/7/traffic_light/0"},
-    {"24/motorised/1/1/traffic_light/0": "24/motorised/7/traffic_light/0"},
-    {"24/motorised/1/0/traffic_light/0": "24/motorised/8/traffic_light/0"},
-    {"24/motorised/1/1/traffic_light/0": "24/motorised/8/traffic_light/0"},
+    {"*/motorised/1/0/traffic_light/0": "*/motorised/4/traffic_light/0"},
+    {"*/motorised/1/1/traffic_light/0": "*/motorised/4/traffic_light/0"},
+    {"*/motorised/1/0/traffic_light/0": "*/motorised/6/traffic_light/0"},
+    {"*/motorised/1/1/traffic_light/0": "*/motorised/6/traffic_light/0"},
+    {"*/motorised/1/0/traffic_light/0": "*/motorised/7/traffic_light/0"},
+    {"*/motorised/1/1/traffic_light/0": "*/motorised/7/traffic_light/0"},
+    {"*/motorised/1/0/traffic_light/0": "*/motorised/8/traffic_light/0"},
+    {"*/motorised/1/1/traffic_light/0": "*/motorised/8/traffic_light/0"},
 
-    {"24/motorised/2/traffic_light/0" : "24/motorised/6/traffic_light/0"},
+    {"*/motorised/2/traffic_light/0" : "*/motorised/6/traffic_light/0"},
 
-    {"24/motorised/3/traffic_light/0": "24/motorised/5/0/traffic_light/0"},
-    {"24/motorised/3/traffic_light/0": "24/motorised/5/1/traffic_light/0"},
-    {"24/motorised/3/traffic_light/0": "24/motorised/7/traffic_light/0"},
+    {"*/motorised/3/traffic_light/0": "*/motorised/5/0/traffic_light/0"},
+    {"*/motorised/3/traffic_light/0": "*/motorised/5/1/traffic_light/0"},
+    {"*/motorised/3/traffic_light/0": "*/motorised/7/traffic_light/0"},
 
-    {"24/motorised/4/traffic_light/0": "24/motorised/0/traffic_light/0"},
-    {"24/motorised/4/traffic_light/0": "24/motorised/1/0/traffic_light/0"},
-    {"24/motorised/4/traffic_light/0": "24/motorised/1/1/traffic_light/0"},
-    {"24/motorised/4/traffic_light/0": "24/motorised/5/0/traffic_light/0"},
-    {"24/motorised/4/traffic_light/0": "24/motorised/5/1/traffic_light/0"},
-    {"24/motorised/4/traffic_light/0": "24/motorised/6/traffic_light/0"},
-    {"24/motorised/4/traffic_light/0": "24/motorised/8/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/0/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/1/0/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/1/1/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/5/0/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/5/1/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/6/traffic_light/0"},
+    {"*/motorised/4/traffic_light/0": "*/motorised/8/traffic_light/0"},
 
-    {"24/motorised/5/0/traffic_light/0" : "24/motorised/0/traffic_light/0"},
-    {"24/motorised/5/1/traffic_light/0" : "24/motorised/0/traffic_light/0"},
-    {"24/motorised/5/0/traffic_light/0" : "24/motorised/3/traffic_light/0"},
-    {"24/motorised/5/1/traffic_light/0" : "24/motorised/3/traffic_light/0"},
-    {"24/motorised/5/0/traffic_light/0" : "24/motorised/4/traffic_light/0"},
-    {"24/motorised/5/1/traffic_light/0" : "24/motorised/4/traffic_light/0"},
-    {"24/motorised/5/0/traffic_light/0" : "24/motorised/7/traffic_light/0"},
-    {"24/motorised/5/1/traffic_light/0" : "24/motorised/7/traffic_light/0"},
+    {"*/motorised/5/0/traffic_light/0" : "*/motorised/0/traffic_light/0"},
+    {"*/motorised/5/1/traffic_light/0" : "*/motorised/0/traffic_light/0"},
+    {"*/motorised/5/0/traffic_light/0" : "*/motorised/3/traffic_light/0"},
+    {"*/motorised/5/1/traffic_light/0" : "*/motorised/3/traffic_light/0"},
+    {"*/motorised/5/0/traffic_light/0" : "*/motorised/4/traffic_light/0"},
+    {"*/motorised/5/1/traffic_light/0" : "*/motorised/4/traffic_light/0"},
+    {"*/motorised/5/0/traffic_light/0" : "*/motorised/7/traffic_light/0"},
+    {"*/motorised/5/1/traffic_light/0" : "*/motorised/7/traffic_light/0"},
 
-    {"24/motorised/6/traffic_light/0" : "24/motorised/1/0/traffic_light/0"},
-    {"24/motorised/6/traffic_light/0" : "24/motorised/1/1/traffic_light/0"},
-    {"24/motorised/6/traffic_light/0" : "24/motorised/4/traffic_light/0"},
-    {"24/motorised/6/traffic_light/0" : "24/motorised/7/traffic_light/0"},
-    {"24/motorised/6/traffic_light/0" : "24/motorised/2/traffic_light/0"},
+    {"*/motorised/6/traffic_light/0" : "*/motorised/1/0/traffic_light/0"},
+    {"*/motorised/6/traffic_light/0" : "*/motorised/1/1/traffic_light/0"},
+    {"*/motorised/6/traffic_light/0" : "*/motorised/4/traffic_light/0"},
+    {"*/motorised/6/traffic_light/0" : "*/motorised/7/traffic_light/0"},
+    {"*/motorised/6/traffic_light/0" : "*/motorised/2/traffic_light/0"},
 
-    {"24/motorised/7/traffic_light/0" : "24/motorised/0/traffic_light/0"},
-    {"24/motorised/7/traffic_light/0" : "24/motorised/1/0/traffic_light/0"},
-    {"24/motorised/7/traffic_light/0" : "24/motorised/1/1/traffic_light/0"},
-    {"24/motorised/7/traffic_light/0" : "24/motorised/3/traffic_light/0"},
-    {"24/motorised/7/traffic_light/0" : "24/motorised/5/0/traffic_light/0"},
-    {"24/motorised/7/traffic_light/0" : "24/motorised/5/1/traffic_light/0"},
-    {"24/motorised/7/traffic_light/0" : "24/motorised/6/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/0/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/1/0/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/1/1/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/3/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/5/0/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/5/1/traffic_light/0"},
+    {"*/motorised/7/traffic_light/0" : "*/motorised/6/traffic_light/0"},
 
-    {"24/motorised/8/traffic_light/0" : "24/motorised/1/0/traffic_light/0"},
-    {"24/motorised/8/traffic_light/0" : "24/motorised/1/1/traffic_light/0"},
-    {"24/motorised/8/traffic_light/0" : "24/motorised/4/traffic_light/0"}
+    {"*/motorised/8/traffic_light/0" : "*/motorised/1/0/traffic_light/0"},
+    {"*/motorised/8/traffic_light/0" : "*/motorised/1/1/traffic_light/0"},
+    {"*/motorised/8/traffic_light/0" : "*/motorised/4/traffic_light/0"}
   ]
 
 }
