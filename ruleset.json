@@ -4,17 +4,42 @@
     { "topic": "*/motorised/1/0/traffic_light/0"},
     { "topic": "*/motorised/1/1/traffic_light/0"},
     { "topic": "*/motorised/2/traffic_light/0"},
-
     { "topic": "*/motorised/3/traffic_light/0"},
     { "topic": "*/motorised/4/traffic_light/0"},
-
     { "topic": "*/motorised/5/0/traffic_light/0"},
     { "topic": "*/motorised/5/1/traffic_light/0"},
     { "topic": "*/motorised/6/traffic_light/0"},
-
     { "topic": "*/motorised/7/traffic_light/0"},
-    { "topic": "*/motorised/8/traffic_light/0"}
+    { "topic": "*/motorised/8/traffic_light/0"},
 
+    { "topic": "*/foot/0/0/traffic_light/0"},
+    { "topic": "*/foot/0/1/traffic_light/0"},
+    { "topic": "*/foot/1/0/traffic_light/0"},
+    { "topic": "*/foot/1/1/traffic_light/0"},
+    { "topic": "*/foot/2/traffic_light/0"},
+    { "topic": "*/foot/3/traffic_light/0"},
+    { "topic": "*/foot/4/0/traffic_light/0"},
+    { "topic": "*/foot/4/1/traffic_light/0"},
+    { "topic": "*/foot/4/2/traffic_light/0"},
+    { "topic": "*/foot/5/0/traffic_light/0"},
+    { "topic": "*/foot/5/1/traffic_light/0"},
+    { "topic": "*/foot/5/2/traffic_light/0"},
+    { "topic": "*/foot/6/traffic_light/0"},
+    { "topic": "*/foot/7/traffic_light/0"},
+
+    { "topic": "*/vessel/0/traffic_light/0"},
+    { "topic": "*/vessel/1/traffic_light/0"},
+
+    { "topic": "*/cycle/0/traffic_light/0"},
+    { "topic": "*/cycle/1/traffic_light/0"},
+    { "topic": "*/cycle/2/traffic_light/0"},
+    { "topic": "*/cycle/3/0/traffic_light/0"},
+    { "topic": "*/cycle/3/1/traffic_light/0"},
+    { "topic": "*/cycle/4/traffic_light/0"},
+    { "topic": "*/cycle/5/traffic_light/0"},
+
+    { "topic": "*/track/0/traffic_light/0"},
+    { "topic": "*/track/0/traffic_light/0"}
   ],
 
   "sensors" : [
@@ -26,84 +51,97 @@
     { "topic" : "*/motorised/1/1/sensor/1"},
     { "topic" : "*/motorised/2/sensor/0"},
     { "topic" : "*/motorised/2/sensor/1"},
-
     { "topic" : "*/motorised/3/sensor/0"},
     { "topic" : "*/motorised/3/sensor/1"},
-
     { "topic" : "*/motorised/4/sensor/0" },
     { "topic" : "*/motorised/4/sensor/1" },
-
     { "topic" : "*/motorised/5/0/sensor/0" },
     { "topic" : "*/motorised/5/0/sensor/1" },
     { "topic" : "*/motorised/5/1/sensor/0" },
     { "topic" : "*/motorised/5/1/sensor/1" },
-
     { "topic" : "*/motorised/6/sensor/0"},
     { "topic" : "*/motorised/6/sensor/1"},
-
     { "topic" : "*/motorised/7/sensor/0" },
     { "topic" : "*/motorised/7/sensor/1" },
-
     { "topic" : "*/motorised/8/sensor/0" },
-    { "topic" : "*/motorised/8/sensor/1" }
+    { "topic" : "*/motorised/8/sensor/1" },
 
+    { "topic": "*/foot/0/0/sensor/0"},
+    { "topic": "*/foot/0/1/sensor/0"},
+    { "topic": "*/foot/1/0/sensor/0"},
+    { "topic": "*/foot/1/1/sensor/0"},
+    { "topic": "*/foot/2/sensor/0"},
+    { "topic": "*/foot/3/sensor/0"},
+    { "topic": "*/foot/4/0/sensor/0"},
+    { "topic": "*/foot/4/1/sensor/0"},
+    { "topic": "*/foot/4/2/sensor/0"},
+    { "topic": "*/foot/5/0/sensor/0"},
+    { "topic": "*/foot/5/1/sensor/0"},
+    { "topic": "*/foot/5/2/sensor/0"},
+    { "topic": "*/foot/6/sensor/0"},
+    { "topic": "*/foot/7/sensor/0"},
+
+    { "topic": "*/vessel/0/sensor/0"},
+    { "topic": "*/vessel/1/sensor/0"},
+
+    { "topic": "*/cycle/0/sensor/0"},
+    { "topic": "*/cycle/1/sensor/0"},
+    { "topic": "*/cycle/2/sensor/0"},
+    { "topic": "*/cycle/3/0/sensor/0"},
+    { "topic": "*/cycle/3/1/sensor/0"},
+    { "topic": "*/cycle/4/sensor/0"},
+    { "topic": "*/cycle/5/sensor/0"},
+
+    { "topic": "*/track/0/sensor/0"},
+    { "topic": "*/track/1/sensor/0"}
   ],
 
-  "intersections": [
-    {"*/motorised/0/traffic_light/0" : "*/motorised/4/traffic_light/0"},
-    {"*/motorised/0/traffic_light/0" : "*/motorised/5/0/traffic_light/0"},
-    {"*/motorised/0/traffic_light/0" : "*/motorised/5/1/traffic_light/0"},
-    {"*/motorised/0/traffic_light/0" : "*/motorised/7/traffic_light/0"},
+  "barriers" : [
+    { "topic": "*/track/0/barrier/0" },
+    { "topic": "*/track/0/barrier/1" },
+    { "topic": "*/track/0/barrier/2" },
+    { "topic": "*/track/0/barrier/3" },
+    { "topic": "*/track/0/barrier/4" },
+    { "topic": "*/track/0/barrier/5" },
+    { "topic": "*/track/0/barrier/6" },
+    { "topic": "*/track/0/barrier/7" },
+    { "topic": "*/track/0/barrier/8" },
 
-    {"*/motorised/1/0/traffic_light/0": "*/motorised/4/traffic_light/0"},
-    {"*/motorised/1/1/traffic_light/0": "*/motorised/4/traffic_light/0"},
-    {"*/motorised/1/0/traffic_light/0": "*/motorised/6/traffic_light/0"},
-    {"*/motorised/1/1/traffic_light/0": "*/motorised/6/traffic_light/0"},
-    {"*/motorised/1/0/traffic_light/0": "*/motorised/7/traffic_light/0"},
-    {"*/motorised/1/1/traffic_light/0": "*/motorised/7/traffic_light/0"},
-    {"*/motorised/1/0/traffic_light/0": "*/motorised/8/traffic_light/0"},
-    {"*/motorised/1/1/traffic_light/0": "*/motorised/8/traffic_light/0"},
+    { "topic": "*/track/1/barrier/0" },
+    { "topic": "*/track/1/barrier/1" },
+    { "topic": "*/track/1/barrier/2" },
+    { "topic": "*/track/1/barrier/3" },
+    { "topic": "*/track/1/barrier/4" },
+    { "topic": "*/track/1/barrier/5" },
+    { "topic": "*/track/1/barrier/6" },
+    { "topic": "*/track/1/barrier/7" },
+    { "topic": "*/track/1/barrier/8" },
 
-    {"*/motorised/2/traffic_light/0" : "*/motorised/6/traffic_light/0"},
+    { "topic": "*/vessel/0/barrier/0" },
+    { "topic": "*/vessel/0/barrier/1" },
+    { "topic": "*/vessel/0/barrier/2" },
+    { "topic": "*/vessel/0/barrier/3" },
+    { "topic": "*/vessel/0/barrier/4" },
+    { "topic": "*/vessel/0/barrier/5" },
+    { "topic": "*/vessel/0/barrier/6" },
+    { "topic": "*/vessel/0/barrier/7" },
 
-    {"*/motorised/3/traffic_light/0": "*/motorised/5/0/traffic_light/0"},
-    {"*/motorised/3/traffic_light/0": "*/motorised/5/1/traffic_light/0"},
-    {"*/motorised/3/traffic_light/0": "*/motorised/7/traffic_light/0"},
+    { "topic": "*/vessel/1/barrier/0" },
+    { "topic": "*/vessel/1/barrier/1" },
+    { "topic": "*/vessel/1/barrier/2" },
+    { "topic": "*/vessel/1/barrier/3" },
+    { "topic": "*/vessel/1/barrier/4" },
+    { "topic": "*/vessel/1/barrier/5" },
+    { "topic": "*/vessel/1/barrier/6" },
+    { "topic": "*/vessel/1/barrier/7" }
+  ],
 
-    {"*/motorised/4/traffic_light/0": "*/motorised/0/traffic_light/0"},
-    {"*/motorised/4/traffic_light/0": "*/motorised/1/0/traffic_light/0"},
-    {"*/motorised/4/traffic_light/0": "*/motorised/1/1/traffic_light/0"},
-    {"*/motorised/4/traffic_light/0": "*/motorised/5/0/traffic_light/0"},
-    {"*/motorised/4/traffic_light/0": "*/motorised/5/1/traffic_light/0"},
-    {"*/motorised/4/traffic_light/0": "*/motorised/6/traffic_light/0"},
-    {"*/motorised/4/traffic_light/0": "*/motorised/8/traffic_light/0"},
+  "warning_lights" : [
+    { "topic": "*/vessel/0/warning_light/0"},
+    { "topic": "*/vessel/1/warning_light/0"},
 
-    {"*/motorised/5/0/traffic_light/0" : "*/motorised/0/traffic_light/0"},
-    {"*/motorised/5/1/traffic_light/0" : "*/motorised/0/traffic_light/0"},
-    {"*/motorised/5/0/traffic_light/0" : "*/motorised/3/traffic_light/0"},
-    {"*/motorised/5/1/traffic_light/0" : "*/motorised/3/traffic_light/0"},
-    {"*/motorised/5/0/traffic_light/0" : "*/motorised/4/traffic_light/0"},
-    {"*/motorised/5/1/traffic_light/0" : "*/motorised/4/traffic_light/0"},
-    {"*/motorised/5/0/traffic_light/0" : "*/motorised/7/traffic_light/0"},
-    {"*/motorised/5/1/traffic_light/0" : "*/motorised/7/traffic_light/0"},
-
-    {"*/motorised/6/traffic_light/0" : "*/motorised/1/0/traffic_light/0"},
-    {"*/motorised/6/traffic_light/0" : "*/motorised/1/1/traffic_light/0"},
-    {"*/motorised/6/traffic_light/0" : "*/motorised/4/traffic_light/0"},
-    {"*/motorised/6/traffic_light/0" : "*/motorised/7/traffic_light/0"},
-    {"*/motorised/6/traffic_light/0" : "*/motorised/2/traffic_light/0"},
-
-    {"*/motorised/7/traffic_light/0" : "*/motorised/0/traffic_light/0"},
-    {"*/motorised/7/traffic_light/0" : "*/motorised/1/0/traffic_light/0"},
-    {"*/motorised/7/traffic_light/0" : "*/motorised/1/1/traffic_light/0"},
-    {"*/motorised/7/traffic_light/0" : "*/motorised/3/traffic_light/0"},
-    {"*/motorised/7/traffic_light/0" : "*/motorised/5/0/traffic_light/0"},
-    {"*/motorised/7/traffic_light/0" : "*/motorised/5/1/traffic_light/0"},
-    {"*/motorised/7/traffic_light/0" : "*/motorised/6/traffic_light/0"},
-
-    {"*/motorised/8/traffic_light/0" : "*/motorised/1/0/traffic_light/0"},
-    {"*/motorised/8/traffic_light/0" : "*/motorised/1/1/traffic_light/0"},
-    {"*/motorised/8/traffic_light/0" : "*/motorised/4/traffic_light/0"}
+    { "topic": "*/track/0/warning_light/0"},
+    { "topic": "*/track/1/warning_light/0"}
   ]
 
 }

@@ -1,8 +1,33 @@
 from abc import ABC, abstractmethod
 
+from models.mqtt_message import MQTTMessage
+from models.mqtt_subgroup_message import MQTTSubgroupMessage
+
+mqtt_message_parse_order = {
+    0: "team_id",
+    1: "lane_type",
+    2: "group_id",
+    3: "component_type",
+    4: "component_id"
+}
+
+mqtt_subgroup_message_parse_order = {
+    0: "team_id",
+    1: "lane_type",
+    2: "group_id",
+    3: "subgroup_id",
+    4: "component_type",
+    5: "component_id"
+}
+
+parse_order = {
+    MQTTMessage: mqtt_message_parse_order,
+    MQTTSubgroupMessage: mqtt_subgroup_message_parse_order
+}
+
 class MessageFactory(ABC):
     def __init__(self):
-        self.parse_order = {}
+        self.parse_order = parse_order
 
     def make_message(self, topic, payload):
         property_list = self.topic_to_list(topic)
@@ -43,6 +68,11 @@ class MessageFactory(ABC):
         new_value = value[1:(len(value) - 1)]
         return new_value
 
-    @abstractmethod
     def determine_type(self, list):
-        pass
+        if len(list) == 5:
+            return MQTTMessage
+        elif len(list) == 6:
+            return MQTTSubgroupMessage
+        else:
+            raise ValueError("Number of given arguments not matching needed number "
+                             "of arguments for object instantiation.")

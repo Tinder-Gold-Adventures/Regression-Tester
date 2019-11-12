@@ -1,53 +1,44 @@
 import json
 
-from factories.sensor_message_factory import SensorMessageFactory
-from factories.traffic_light_message_factory import TrafficLightMessageFactory
-from models.traffic_light_message import TrafficLightMessage
+from factories.message_factory import MessageFactory
+
 
 class AvailableTopicsService:
 
     def __init__(self, json_file, team_id):
         self.json_file = json_file
-        self.traffic_lights = {}
-        self.sensors = {}
         self.data = self.__get_json()
         self.team_id = team_id
+        self.message_factory = MessageFactory()
 
     def __get_json(self):
         with open(self.json_file) as file:
             data = json.load(file)
             return data
 
+    def __get_by_lane_type(self, lane_type):
+        rules = self.data.get(lane_type)
+        topics = {}
+
+        for topic in rules:
+            message = self.message_factory.make_message(topic.get("topic"), "0")
+            topics.update({message.topic: message})
+
+        return topics
+
+    def get_warning_lights(self) -> dict:
+        return self.__get_by_lane_type("warning_lights")
+
+    def get_barriers(self) -> dict:
+        return self.__get_by_lane_type("barriers")
 
     def get_traffic_lights(self) -> dict:
-        traffic_message_factory = TrafficLightMessageFactory()
-
-        # UPDATE TEAM_ID
-        traffic_lights = self.data.get("traffic_lights")
-        intersections = self.data.get("intersections")
-
-        for topic in traffic_lights:
-            traffic_message = traffic_message_factory.make_message(topic.get("topic"), "0")
-            self.traffic_lights.update({traffic_message.topic: traffic_message})
-
-        for intersection in intersections:
-            key, value = list(intersection.items())[0]
-
-            intersect: TrafficLightMessage = self.traffic_lights.get(key)
-            intersect.intersections.append(value)
-
-        return self.traffic_lights
+        return self.__get_by_lane_type("traffic_lights")
 
     def get_sensors(self) -> dict:
-        sensor_message_factory = SensorMessageFactory()
+        return self.__get_by_lane_type("sensors")
 
-        sensors = self.data.get("sensors")
-        #UPDATE TEAM_ID
-        for topic in sensors:
-            sensor_message = sensor_message_factory.make_message(topic.get("topic"), "0")
-            self.sensors.update({sensor_message.topic: sensor_message})
 
-        return self.sensors
 
 
 
