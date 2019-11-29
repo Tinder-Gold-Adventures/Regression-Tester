@@ -47,8 +47,10 @@ sensors = topic_provider.get_sensors()
 barriers = topic_provider.get_barriers()
 traffic_lights = topic_provider.get_traffic_lights()
 warning_lights = topic_provider.get_warning_lights()
+deck = topic_provider.get_deck()
+boat_lights = topic_provider.get_boat_lights()
 
-topics = {**traffic_lights, **sensors, **barriers, **warning_lights}
+topics = {**traffic_lights, **sensors, **barriers, **warning_lights, **deck, **boat_lights}
 # End
 
 # Register error handlers
@@ -58,10 +60,12 @@ error_handler_list = [log_error_handler]
 
 # Register message handlers and accepted payloads per MQTTMessage component_type
 accepted_values = {
-    'traffic_light': ['0', '1', '2', '3'],
+    'traffic_light': ['0', '1', '2'],
     'warning_light': ['0', '1'],
     'barrier': ['0', '1'],
-    'sensor': ['0', '1']
+    'sensor': ['0', '1'],
+    'boat_light': ['0', '1'],
+    'deck': ['0', '1']
 }
 
 mqtt_message_handler = MQTTMessageHandler(accepted_values=accepted_values)
