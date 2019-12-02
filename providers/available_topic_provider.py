@@ -38,6 +38,12 @@ class AvailableTopicsService:
     def get_sensors(self) -> dict:
         return self.__get_by_lane_type("sensors")
 
+    def get_boat_lights(self) -> dict:
+        return self.__get_by_lane_type("boat_lights")
+
+    def get_deck(self) -> dict:
+        return self.__get_by_lane_type("deck")
+
 
 
 
