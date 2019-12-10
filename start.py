@@ -5,10 +5,11 @@ from models.mqtt_subgroup_message import MQTTSubgroupMessage
 from providers.available_topic_provider import AvailableTopicsService
 import paho.mqtt.client as mqtt
 from regression_tester import RegressionTester
+from sequences.vessel_sequence import VesselSequence
 
 from zenlog import log
 
-TEAM_ID = 24
+TEAM_ID = 2424
 
 # Strip team_id from check
 def strip_team_id(msg, team_id):
@@ -53,6 +54,11 @@ boat_lights = topic_provider.get_boat_lights()
 topics = {**traffic_lights, **sensors, **barriers, **warning_lights, **deck, **boat_lights}
 # End
 
+vessel_sequence = VesselSequence(topics)
+vessel_sequence.setup_sequence()
+
+sequences = [vessel_sequence]
+
 # Register error handlers
 log_error_handler = LogErrorHandler()
 error_handler_list = [log_error_handler]
@@ -77,7 +83,7 @@ message_handlers = {
 # End
 
 # Register Regression tester & Get going!
-regression_tester = RegressionTester(topics=topics, message_handlers=message_handlers, error_handlers=error_handler_list)
+regression_tester = RegressionTester(topics=topics, sequences=sequences, message_handlers=message_handlers, error_handlers=error_handler_list)
 
 listener.loop_forever()
 
