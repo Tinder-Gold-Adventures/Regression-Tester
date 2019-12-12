@@ -6,7 +6,7 @@ from errors.invalid_value_error import InvalidValueError
 from sequences.mqtt_sequence import MQTTSeqeunce
 
 class RegressionTester:
-    def __init__(self, topics, sequences: List[MQTTSeqeunce], message_handlers: dict, error_handlers: List[RegressionErrorHandler]):
+    def __init__(self, topics: dict, sequences: List[MQTTSeqeunce], message_handlers: dict, error_handlers: List[RegressionErrorHandler]):
         self.topics = topics
         self.sequences = sequences
         self.error_handlers = error_handlers
@@ -54,7 +54,7 @@ class RegressionTester:
 
                 if trigger.topic == topic:
                     if trigger.value == payload:
-                        sequence.handle(topic, payload)
+                        sequence.handle()
                     else:
                         log.error("Payload: " + payload + " not allowed for topic: "
                                   + topic + " at this point of sequence. Expected payload: " + trigger.value)

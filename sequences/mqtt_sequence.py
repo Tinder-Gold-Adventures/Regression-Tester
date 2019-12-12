@@ -1,27 +1,25 @@
 from abc import ABC
 from zenlog import log
-from models.sequence import Sequence
 
 class MQTTSeqeunce(ABC):
 
     def __init__(self):
-        self.start_condition, self.stop_condition = dict, dict
-        self.started = False
         self.state = 0
         self.sequence_topics = []
 
     def setup_sequence(self):
-        pass
+        raise NotImplementedError()
 
     def stop(self):
-        log.info("Sequence done")
+        log.info("Sequence DONE: Resetting now.")
+        self.state = 0
         return
 
-    def handle(self, topic, name):
+    def handle(self):
         sequence = self.sequence_topics[self.state]
         sequence.execute()
 
-        if self.state + 1 > (len(self.sequence_topics) + 1):
+        if self.state + 1 == (len(self.sequence_topics)):
             self.stop()
             return
 
@@ -35,9 +33,4 @@ class MQTTSeqeunce(ABC):
 
         return topic_names
 
-    def set_start_condition(self, start_condition):
-        self.start_condition = start_condition
-
-    def set_stop_condition(self, stop_condition):
-        self.stop_condition = stop_condition
 

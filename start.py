@@ -6,10 +6,11 @@ from providers.available_topic_provider import AvailableTopicsService
 import paho.mqtt.client as mqtt
 from regression_tester import RegressionTester
 from sequences.vessel_sequence import VesselSequence
+from sequences.track_sequence import TrackSequence
 
 from zenlog import log
 
-TEAM_ID = 2424
+TEAM_ID = 24
 
 # Strip team_id from check
 def strip_team_id(msg, team_id):
@@ -50,14 +51,17 @@ traffic_lights = topic_provider.get_traffic_lights()
 warning_lights = topic_provider.get_warning_lights()
 deck = topic_provider.get_deck()
 boat_lights = topic_provider.get_boat_lights()
+train_lights = topic_provider.get_train_lights()
 
-topics = {**traffic_lights, **sensors, **barriers, **warning_lights, **deck, **boat_lights}
+topics = {**traffic_lights, **sensors, **barriers, **warning_lights, **deck, **boat_lights, **train_lights}
 # End
 
 vessel_sequence = VesselSequence(topics)
 vessel_sequence.setup_sequence()
+track_sequence = TrackSequence(topics)
+track_sequence.setup_sequence()
 
-sequences = [vessel_sequence]
+sequences = [vessel_sequence, track_sequence]
 
 # Register error handlers
 log_error_handler = LogErrorHandler()
@@ -71,7 +75,8 @@ accepted_values = {
     'barrier': ['0', '1'],
     'sensor': ['0', '1'],
     'boat_light': ['0', '1'],
-    'deck': ['0', '1']
+    'deck': ['0', '1'],
+    'train_light': ['0', '1']
 }
 
 mqtt_message_handler = MQTTMessageHandler(accepted_values=accepted_values)

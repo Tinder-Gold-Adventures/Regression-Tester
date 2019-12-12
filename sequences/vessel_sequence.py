@@ -1,6 +1,8 @@
-from sequences.mqtt_sequence import MQTTSeqeunce
-from models.sequence import  Sequence
 from zenlog import log
+
+from models.sequence import Sequence
+from sequences.mqtt_sequence import MQTTSeqeunce
+
 
 class VesselSequence(MQTTSeqeunce):
 
@@ -13,6 +15,8 @@ class VesselSequence(MQTTSeqeunce):
         self.sequence_topics.append(Sequence("*/vessel/0/barrier/0", "1", self.check_warning_lights_on)) # Close barriers
         self.sequence_topics.append(Sequence("*/vessel/0/deck/0", "1", self.check_bridge_opening)) # Open the bridge
         self.sequence_topics.append(Sequence("*/vessel/0/deck/0", "0", self.check_bridge_closing)) # Close the brdige
+        self.sequence_topics.append(Sequence("*/vessel/0/barrier/0", "0", None))  # Close the brdige
+        self.sequence_topics.append(Sequence("*/vessel/0/warning_light/0", "0", None))  # Close the brdige
 
     def notify_sequence_start(self):
         log.info("Bridge sequence started: Monitoring now.")

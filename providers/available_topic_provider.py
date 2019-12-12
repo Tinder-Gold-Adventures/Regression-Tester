@@ -44,6 +44,9 @@ class AvailableTopicsService:
     def get_deck(self) -> dict:
         return self.__get_by_lane_type("deck")
 
+    def get_train_lights(self):
+        return self.__get_by_lane_type("train_lights")
+
 
 
 
