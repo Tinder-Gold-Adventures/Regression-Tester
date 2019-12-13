@@ -23,10 +23,7 @@
     { "topic": "*/cycle/1/traffic_light/0"},
     { "topic": "*/cycle/2/traffic_light/0"},
     { "topic": "*/cycle/3/traffic_light/0"},
-    { "topic": "*/cycle/4/traffic_light/0"},
-
-    { "topic": "*/track/0/traffic_light/0"},
-    { "topic": "*/track/0/traffic_light/0"}
+    { "topic": "*/cycle/4/traffic_light/0"}
   ],
 
   "sensors" : [
@@ -88,19 +85,22 @@
 
   "barriers" : [
     { "topic": "*/track/0/barrier/0" },
-
     { "topic": "*/vessel/0/barrier/0" }
   ],
 
   "warning_lights" : [
     { "topic": "*/vessel/0/warning_light/0"},
-
     { "topic": "*/track/0/warning_light/0"}
   ],
 
   "boat_lights" : [
     { "topic": "*/vessel/0/boat_light/0"},
     { "topic": "*/vessel/0/boat_light/1"}
+  ],
+
+  "train_lights" : [
+    { "topic": "*/track/0/train_light/0"},
+    { "topic": "*/track/0/train_light/1"}
   ],
 
   "deck" : [
